@@ -10,11 +10,11 @@ function yearOfBirth(age){
 
 function whoAmI(name,age){
    
-    if( age === undefined ){
+    if( age === undefined || typeof age !== 'number'){
         console.error("Arguments not valid");
     } 
 
-    else if (name === undefined){
+    else if (name === undefined || typeof name !== 'string'){
         console.error("Arguments not valid");
     }
     else {
@@ -33,4 +33,4 @@ catch (e){
 
 
 
-whoAmI('Bob',29);
+whoAmI(2,29);
