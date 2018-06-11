@@ -1,5 +1,5 @@
 
-function yearOfBirth(age=30){
+function yearOfBirth(age){
     if (age < 0){
         throw new Error ("Age can not be negative");
     }
@@ -8,10 +8,20 @@ function yearOfBirth(age=30){
 }
 
 
-function whoAmI(name='Donny',age=30){
+function whoAmI(name,age){
+   
+    if( age === undefined ){
+        console.error("Arguments not valid");
+    } 
+
+    else if (name === undefined){
+        console.error("Arguments not valid");
+    }
+    else {
     let yob = yearOfBirth(age);
     console.log(`Hi, my name is ${name} and I\'m ${age} years old`);
     console.log(`I was born in ${yob}`);
+    }
 }
 
 try{
@@ -23,4 +33,4 @@ catch (e){
 
 
 
-
+whoAmI('Bob',29);
