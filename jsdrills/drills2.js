@@ -66,32 +66,41 @@
 
 // //decode('apple');
 
-function daysInMonth(month, leapYear){
-    switch(month, leapYear){
-        case 'Jan':
-        case 'Mar':
+
+function daysInMonth(month,leapYear=false){
+    let text;
+    switch (month) {
+        
+        case 'January':
+        case 'March':
         case 'May':
         case 'July':
-        case 'Aug':
-        case 'Oct':
-        case 'Dec':
-            result = month+` has 31 days`
-            break;
+        case 'August':
+        case 'October':
+        case 'December':
+          text=`${month} has 31 days`;  
+        break;
         case 'April':
         case 'June':
-        case 'Sept':
-        case 'Nov':
-            result = `${month} has 30 days`;
-        case 'Feb':
+        case 'September':
+        case 'November':
+          text=`${month} has 30 days'`;
+        break;
+        case 'February':
             if(leapYear === true){
-                return `${month} has 29 days`
-            }else{
-                return`${month} has 28 days`
-            }
+                    text=`${month} has 29 days`;
+                  }else{
+                     text=`${month} has 28 days`;
+                  }
             break;
-        default:
-            throw 'Must provide a valid month.'
-    console.log('month');        
-    }   
-}
-daysInMonth('Jan', true);
+      default:
+        console.log('Must provide a valid month.');
+    }
+         return text;
+    }
+    
+    console.log(daysInMonth('February',true));
+  
+  
+  
+  
